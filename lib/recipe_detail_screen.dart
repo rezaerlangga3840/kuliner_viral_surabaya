@@ -159,8 +159,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: kIsWeb ? null : AppBar(),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           vertical: 16,
           horizontal: 64,
@@ -171,14 +170,6 @@ class _DetailWebPageState extends State<DetailWebPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const Text(
-                  'Wisata Kuliner Surabaya',
-                  style: TextStyle(
-                    fontFamily: 'Staatliches',
-                    fontSize: 32,
-                  ),
-                ),
-                const SizedBox(height: 32),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

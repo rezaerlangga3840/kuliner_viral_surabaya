@@ -34,15 +34,13 @@ class RestaurantDetailScreen extends StatelessWidget {
 
 class DetailMobilePage extends StatelessWidget {
   final Restaurant place;
-
   const DetailMobilePage({Key? key, required this.place}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Stack(
               children: <Widget>[
@@ -61,7 +59,6 @@ class DetailMobilePage extends StatelessWidget {
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-
                   ),
                 ),
               ],
@@ -185,8 +182,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: kIsWeb ? null : AppBar(),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           vertical: 16,
           horizontal: 64,
@@ -197,14 +193,6 @@ class _DetailWebPageState extends State<DetailWebPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const Text(
-                  'Wisata Kuliner Surabaya',
-                  style: TextStyle(
-                    fontFamily: 'Staatliches',
-                    fontSize: 32,
-                  ),
-                ),
-                const SizedBox(height: 32),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
